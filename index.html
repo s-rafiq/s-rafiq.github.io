@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <h1 id="name">Saad Rafiq</h1>
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Aspiring Developer</p>
+            <h1>Hi, I'm <span>Saad</span><br>from Greater<br>Manchester</h1>
+        </div>
+    </div>
+</div>
+<!-- about -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="saad-2-min.PNG">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About me</h1>
+                <p>As a Chemistry graduate with a strong foundation in software development, I am passionate about applying my programming skills and scientific background to create innovative solutions for real-world problems. I recently completed a 12-week coding bootcamp at QA Ltd, where I learned various languages, tools, and frameworks, such as HTML, CSS, JavaScript, Python and Github.</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Web development</span><br>HTML, CSS and JavaScript</li>
+                        <li><span>Bilingual</span><br>English and Urdu</li>
+                        <li><span>Tools</span><br>Microsoft office, GitHub, CRM</li>
+                        <li><span>Personal qualities</span><br>Analytical, problem solving skills, communication, emotional intelligence</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2022-2023</span><br>Sales development representative - Objectivity</li>
+                        <li><span>2018-2022</span><br>Store manager - Bun & Slice</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2023</span><br>Software development level 3 Bootcamp - QA</li>
+                        <li><span>2022</span><br>BSc (Hons) Chemistry - MMU</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+
+var tablinks = document.getElementsByClassName("tab-links");
+var tabcontents = document.getElementsByClassName("tab-contents");
+
+function opentab(tabname){
+    for(tablink of tablinks){
+        tablink.classList.remove("active-link");
+    }
+    for(tabcontent of tabcontents){
+        tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab");
+}
+
+</script>
+
+<!-- portfolio -->
+
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="worklist">
+            <div class="work">
+                <img src="work-1.png">
+                <div class="layer">
+                    <h3>More projects coming soon</h3>
+                    <a href="#"><i class="fa-solid fa-link" style="color: #c4cad4;"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="work-2.png">
+                <div class="layer">
+                    <h3>More projects coming soon</h3>
+                    <a href="#"><i class="fa-solid fa-link" style="color: #c4cad4;"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="work-3.png">
+                <div class="layer">
+                    <h3>More projects coming soon</h3>
+                    <a href="#"><i class="fa-solid fa-link" style="color: #c4cad4;"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+    </div>
+</div>
+<script src="https://kit.fontawesome.com/94eeaba0e8.js" crossorigin="anonymous"></script>
+
+<!-- contact -->
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>saadrafiq2010@hotmail.co.uk</p>
+                <p><i class="fa-solid fa-phone"></i>07857884457</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/saadrafiq/">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                <a href="/portfolio/cv_Saad.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required> 
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+<!-- Remove or comment out this form -->
+<!--
+<form name="submit-to-google-sheet">
+    <input name="email" type="email" placeholder="Email" required>
+    <button type="submit">Send</button>
+</form>
+-->
+  
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzLjVCQZ_uLVqSpP6_iB9QZxFQQe3VlOAyOVYuFVIPvrFUT2lSxeDrdx9EIwe7CLUA0/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
